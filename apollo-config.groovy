@@ -82,6 +82,21 @@ apollo {
     translation_table = "/config/translation_tables/ncbi_" + (System.getenv("WEBAPOLLO_TRANSLATION_TABLE") ?: "1") + "_translation_table.txt"
     get_translation_code = System.getenv("WEBAPOLLO_TRANSLATION_TABLE") ? System.getenv("WEBAPOLLO_TRANSLATION_TABLE").toInteger() : 1
 
+    // MP EDIT: ADDED BLAT FUNCTIONALITY AND SET PATH TO BIN
+    sequence_search_tools = [
+        blat_nuc: [
+          search_exe: "/usr/local/bin/blat",
+          search_class: "org.bbop.apollo.sequence.search.blat.BlatCommandLineNucleotideToNucleotide",
+          name: "Blat nucleotide",
+          params: ""
+        ],
+        blat_prot: [
+          search_exe: "/usr/local/bin/blat",
+          search_class: "org.bbop.apollo.sequence.search.blat.BlatCommandLineProteinToNucleotide",
+          name: "Blat protein",
+          params: ""
+        ]
+      ]
     // TODO: should come from config or via preferences database
     splice_donor_sites = System.getenv("WEBAPOLLO_SPLICE_DONOR_SITES") ? System.getenv("WEBAPOLLO_SPLICE_DONOR_SITES").split(",") : ["GT"]
     splice_acceptor_sites = System.getenv("WEBAPOLLO_SPLICE_ACCEPTOR_SITES") ? System.getenv("WEBAPOLLO_SPLICE_ACCEPTOR_SITES").split(",") : ["AG"]
@@ -118,11 +133,12 @@ jbrowse {
         HideTrackLabels{
             included = true
         }
-//        GCContent{
-//            git = 'https://github.com/cmdcolin/GCContent'
-//            branch = 'master'
-//            alwaysRecheck = "true"
-//            alwaysPull = "true"
-//        }
+        //MP EDIT: ADDED GC CONTENT FUNCTIONALITY
+        GCContent{
+            git = 'https://github.com/cmdcolin/GCContent'
+            branch = 'master'
+            alwaysRecheck = "true"
+            alwaysPull = "true"
+        }
     }
 }
