@@ -140,5 +140,12 @@ jbrowse {
             alwaysRecheck = "true"
             alwaysPull = "true"
         }
+        //EDIT: ADDS ELASTIC SEARCH PLUGIN FROM GITHUB
+        ElasticSearch
+            git = 'https://github.com/elsiklab/jbrowse_elasticsearch'
+            branch = 'master'
+            alwaysRecheck = "true"
+            alwaysPull = "true"
+        }
     }
 }
