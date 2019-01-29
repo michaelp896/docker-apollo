@@ -105,10 +105,10 @@ apollo {
     google_analytics = System.getenv("WEBAPOLLO_GOOGLE_ANALYTICS_ID") ?: ["UA-62921593-1"]
 
     admin{
-        username = System.getenv("APOLLO_ADMIN_EMAIL") ?: "michael.poeschla@gmail.com"
-        password = System.getenv("APOLLO_ADMIN_PASSWORD") ?: "password"
-        firstName = System.getenv("APOLLO_ADMIN_FIRST_NAME") ?: "Michael"
-        lastName = System.getenv("APOLLO_ADMIN_LAST_NAME") ?: "P"
+        username = System.getenv("APOLLO_ADMIN_EMAIL") ?: "admin@local.host"
+        password = System.getenv("APOLLO_ADMIN_PASSWORD") ?: "4Yy@xWG7i8Nm"
+        firstName = System.getenv("APOLLO_ADMIN_FIRST_NAME") ?: "Admin"
+        lastName = System.getenv("APOLLO_ADMIN_LAST_NAME") ?: "User"
     }
 }
 
